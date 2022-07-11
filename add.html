@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{##}
+{#    <script>#}
+{#        function add() {#}
+{#            let title = $('#title').val();#}
+{#            let author = $('#author').val();#}
+{#            let url = $('#url').val();#}
+{#            let food = $('#food').val();#}
+{#            let content = $('#content').val();#}
+{##}
+{#            $.ajax({#}
+{#                type: 'POST',#}
+{#                url: '/add',#}
+{#                data: {title_give:title,author_give:author,url_give:url,food_give:food,content_give:content},#}
+{#                success: function (response) {#}
+{#                    response.#}
+{#                    window.location.reload();#}
+{#                }#}
+{#            });#}
+{#        }#}
+{#    </script>#}
+
+</head>
+<body>
+<h1>게시글 등록</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form action="/add" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="author" name="author" placeholder="작성자를 입력하세요">
+            </div>
+            <div class="form-group">
+                <input type="url" class="form-control" id="url" name="url" placeholder="URL을 입력하세요">
+            </div>
+            <div class="form-group">
+                <select id="food" name="food" class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="korea">한식</option>
+                    <option value="china">중식</option>
+                    <option value="japan">일식</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="content">내용</label>
+                <textarea class="form-control" id="content" name="content" placeholder="내용을 입력하세요"></textarea>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-save" onclick="add()">등록</button>
+    </div>
+</div>
+</body>
+</html>
